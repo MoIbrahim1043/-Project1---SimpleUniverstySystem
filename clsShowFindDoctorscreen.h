@@ -11,6 +11,7 @@ private:
 
 	static void _PrintDoctorInfo(clsDoctor& Doctor)
 	{
+		cout << "\n\t\t\t\tDoctor info :\n";
 		cout << "\n\t\t\t\t==========================================================";
 		cout << "\n\t\t\t\tFull name : " << Doctor.fullname();
 		cout << "\n\t\t\t\tEmail     : " << Doctor.getemail();
@@ -32,7 +33,6 @@ public:
 		if (clsDoctor::isDoctorExist(Uname))
 		{
 			clsDoctor Doctor = clsDoctor::Find(Uname);
-			cout << "\nDoctor info :\n";
 			_PrintDoctorInfo(Doctor);
 		}
 

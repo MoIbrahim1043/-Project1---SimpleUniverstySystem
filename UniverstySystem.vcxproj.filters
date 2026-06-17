@@ -122,5 +122,8 @@
     <ClInclude Include="Global.h">
       <Filter>Header Files\Other</Filter>
     </ClInclude>
+    <ClInclude Include="clsShowAddDoctorscreen.h">
+      <Filter>Header Files\Doctor</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -224,27 +224,8 @@ public:
 
 	static bool isStudentExist(string ID)
 	{
-		fstream file;
-		file.open("Students.txt", ios::in);
-
-		if (file.is_open())
-		{
-			string line;
-			while (getline(file, line))
-			{
-				clsStudent Student = _ConvertDatalinetoObject(line);
-
-				if (Student.getID() == ID)
-				{
-					file.close();
-					return true;
-				}
-			}
-
-			file.close();
-			return false;
-		}
-
+		clsStudent Student = clsStudent::Find(ID);
+		return !Student.isEmpty();
 	}
 
 	void Addnew()

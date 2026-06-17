@@ -6,4 +6,9 @@
 *.idb
 *.pdb
 *.exe
+*.vsidx
+*.suo
+*.db
+*.json
+*.ipch
 

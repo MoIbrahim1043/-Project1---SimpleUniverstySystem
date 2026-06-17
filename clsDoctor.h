@@ -37,7 +37,6 @@ private:
 		return line;
 	}
 
-
 	static clsDoctor _ReturnEmptyDoctor(string Username)
 	{
 		return clsDoctor("", "", "", "", Username, "", 0);
@@ -91,7 +90,6 @@ private:
 		return clsdate::DateandTime() + Parameter + fullname() + Parameter + _Username + Parameter + getphone();
 	}
 
-
 public:
 
 	clsDoctor(string firstname, string lastname, string email, string phone, string username, string password, double salary)
@@ -100,6 +98,11 @@ public:
 		_Username = username;
 		_Password = password;
 		_Salary = salary;
+	}
+
+	void setPassword(string Password)
+	{
+		_Password = Password;
 	}
 
 	void setsalary(double salary)
@@ -129,7 +132,7 @@ public:
 
 	bool isEmpty()
 	{
-		if (getemail() == "" && getphone() == "" && _Password == "" && _Salary == 0)
+		if (getemail() == "" && getphone() == "" && _Salary == 0)
 		{
 			return true;
 		}
@@ -187,27 +190,8 @@ public:
 
 	static bool isDoctorExist(string Username)
 	{
-		fstream file;
-		file.open("Doctors.txt", ios::in);
-
-		if (file.is_open())
-		{
-			string line;
-			while (getline(file, line))
-			{
-				clsDoctor Doctor = _ConvertDatalinetoObject(line);
-
-				if (Doctor.getUsername() == Username)
-				{
-					file.close();
-					return true;
-				}
-			}
-
-			file.close();
-			return false;
-		}
-
+		clsDoctor Doctor = clsDoctor::Find(Username);
+		return !Doctor.isEmpty();
 	}
 
 	static vector <clsDoctor> GetDoctorslist()
@@ -229,6 +213,20 @@ public:
 		}
 
 		_LoaddataFromVectortoFile(vDoctors);
+	}
+
+	void AddNew()
+	{
+		fstream file;
+		file.open("Doctors.txt", ios::app);
+
+		if (file.is_open())
+		{
+			string Line = _ConvertObjecttoDataLine(*this);
+			file << Line << endl;
+
+			file.close();
+		}
 	}
 
 	void AddtoLoginlist()

@@ -45,11 +45,11 @@ protected:
 		cout << "\n\t\t\t\t\t\t\t" << Title;
 		if (subTitle != "")
 		{
-			cout << "\n\t\t\t\t\t\t" << subTitle;
+			cout << "\n\t\t\t\t\t\t\t" << subTitle;
 		}
 		cout << "\n\t\t\t________________________________________________________________________________\n\n";
 
-		cout << "\t\t\t\t\t" << iDorName() << PrintingidorName();
-		cout << "\n\t\t\t\t\tDate     : " << clsdate::date(clsdate()) << endl;
+		cout << "\t\t\t\t\t\t" << iDorName() << PrintingidorName();
+		cout << "\n\t\t\t\t\t\tDate     : " << clsdate::date(clsdate()) << endl;
 	}
 };

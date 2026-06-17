@@ -136,6 +136,7 @@
     <ClInclude Include="clsperiod.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScreen.h" />
+    <ClInclude Include="clsShowAddDoctorscreen.h" />
     <ClInclude Include="clsShowAddNewStudentscreen.h" />
     <ClInclude Include="clsShowDeleteDoctorscreen.h" />
     <ClInclude Include="clsShowDoctorInfoscreen.h" />

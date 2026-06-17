@@ -13,6 +13,7 @@
 #include "clsShowDeleteDoctorscreen.h"
 #include "clsShowLoginsListscreen.h"
 #include "clsShowUpdateInfoScreen.h"
+#include "clsShowAddDoctorscreen.h"
 using namespace std;
 
 class clsShowManagerMainscreen : protected clsScreen
@@ -57,6 +58,11 @@ private:
 	static void _ShowAddnewStudentscreen()
 	{
 		clsShowAddNewStudentscreen::ShowAddNewStudentScreen();
+	}
+
+	static void _ShowAddNewDoctorscreen()
+	{
+		clsShowAddDoctorscreen::ShowAddnewDoctorscreen();
 	}
 
 	static void _ShowDeleteStudentscreen()
@@ -136,7 +142,7 @@ private:
 		case enMainMenuOption::AddDoctor:
 		{
 			system("cls");
-
+			_ShowAddNewDoctorscreen();
 			_GobacktoManagerMenu();
 			break;
 		}

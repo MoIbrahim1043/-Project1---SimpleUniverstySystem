@@ -4,6 +4,7 @@
 #include "clsStudent.h"
 #include "clsDoctor.h"
 #include "clsManager.h"
+#include "clsMarksandGrades.h"
 #include <vector>
 #include <fstream>
 #include "clsString.h"
@@ -86,6 +87,7 @@ public:
 		if (!CurrentStudent.isEmpty())
 		{
 			CurrentStudent.AddtoLoginlist();
+			CurrentStudentMandG = clsMarksandGrades::Find(ID);
 			clsShowStudentmainscreen::ShowStudentmainscreen();
 		}
 

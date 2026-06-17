@@ -12,6 +12,7 @@
 #include "clsDeleteStudentscreen.h"
 #include "clsShowDeleteDoctorscreen.h"
 #include "clsShowLoginsListscreen.h"
+#include "clsShowUpdateInfoScreen.h"
 using namespace std;
 
 class clsShowManagerMainscreen : protected clsScreen
@@ -20,11 +21,11 @@ private:
 
 	enum enMainMenuOption { ManagerInfo = 1 , FindStudent = 2 , FindDoctor = 3 
 		, StudentsList = 4 , DoctorsList = 5 , AddStudent = 6 , AddDoctor = 7 
-		, DeleteStudent = 8 , DeleteDoctor = 9 , LoginsList = 10 , Logout = 11 };
+		, DeleteStudent = 8 , DeleteDoctor = 9 , UpdateInfo = 10 , LoginsList = 11 , Logout = 12 };
 
 	static short _Readmainmenuoption()
 	{
-		short Option = clsInputValidate::ReadNumberBetween<short>(1, 11, "\nWrong, please enter a number between 1 to 11 : ");
+		short Option = clsInputValidate::ReadNumberBetween<short>(1, 12, "\nWrong, please enter a number between 1 to 12 : ");
 		return Option;
 	}
 
@@ -66,6 +67,11 @@ private:
 	static void _ShowDeleteDoctorscreen()
 	{
 		clsShowDeleteDoctorscreen::ShowDeleteDoctorscreen();
+	}
+
+	static void _ShowUpdateStudentscreen()
+	{
+		clsShowUpdateInfoScreen::ShowUpdateInfoScreen();
 	}
 
 	static void _ShowLoginsListscreen()
@@ -148,6 +154,13 @@ private:
 			_GobacktoManagerMenu();
 			break;
 		}
+		case enMainMenuOption::UpdateInfo:
+		{
+			system("cls");
+			_ShowUpdateStudentscreen();
+			_GobacktoManagerMenu();
+			break;
+		}
 		case enMainMenuOption::LoginsList:
 		{
 			system("cls");
@@ -172,7 +185,7 @@ public:
 
 		cout << "\n";
 		cout << setw(35) << "" << "=========================================================\n";
-		cout << setw(35) << "" << "\t\t Main Menu\n";
+		cout << setw(35) << "" << "\t\t\tMain Menu\n";
 		cout << setw(35) << "" << "=========================================================\n";
 		cout << setw(35) << "" << "      [1] Your Info\n";
 		cout << setw(35) << "" << "      [2] Find Student\n";
@@ -183,10 +196,11 @@ public:
 		cout << setw(35) << "" << "      [7] Add Doctor\n";
 		cout << setw(35) << "" << "      [8] Delete Student\n";
 		cout << setw(35) << "" << "      [9] Delete Doctor\n";
-		cout << setw(35) << "" << "      [10] Logins list\n";
-		cout << setw(35) << "" << "      [11] Logout\n";
+		cout << setw(35) << "" << "      [10] Update Student\n";
+		cout << setw(35) << "" << "      [11] Logins list\n";
+		cout << setw(35) << "" << "      [12] Logout\n";
 		cout << setw(35) << "" << "=========================================================\n";
-		cout << setw(35) << "" << "Choose what do you want to do ( 1 to 11 ) : ";
+		cout << setw(35) << "" << "Choose what do you want to do ( 1 to 12 ) : ";
 
 		_PerformMainMenuOption(enMainMenuOption(_Readmainmenuoption()));
 	}

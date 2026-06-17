@@ -27,11 +27,11 @@ private:
 		cout << "\nEnter phone : ";
 		Student.setphone(clsInputValidate::readstring());
 
-		cout << "\nEnter phone : ";
-		Student.setphone(clsInputValidate::readstring());
-
 		cout << "\nEnter password : ";
 		Student.setPassword(clsInputValidate::readstring());
+
+		cout << "\nEnter phase : ";
+		Student.setPhase(clsInputValidate::ReadNumberBetween(1,4, "Wrong, please enter a number between 1 to 4 : "));
 
 		cout << "\nEnter maths mark : ";
 		Marks.setMaths(clsInputValidate::ReadNumberBetween<float>(0, 100, title));

@@ -53,6 +53,7 @@ private:
 		{
 			clsLogin::StudentLogin();
 			CurrentStudent = clsStudent::Find("");
+			CurrentStudentMandG = clsMarksandGrades::Find("");
 			break;
 		}
 		case enLoginOption::Doctor:
@@ -80,6 +81,7 @@ public:
 		cout << "\nAre you [1] Student , [2] Doctor , [3] Manager  : ";
 
 		_PerformLoginOption(enLoginOption(_Readmainmenuoption()));
+		LoginOption = 0;
 	}
 	
 };

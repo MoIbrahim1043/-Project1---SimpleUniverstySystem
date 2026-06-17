@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Student">
+      <UniqueIdentifier>{6a6c18dc-85c5-4ed7-b96c-d494019f5f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Doctor">
+      <UniqueIdentifier>{1b9ebfb4-3f71-44bb-92cc-babb15a1b37e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Manager">
+      <UniqueIdentifier>{b59fe3e0-4edc-41ba-a7cf-e25b92ef2432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Login">
+      <UniqueIdentifier>{b4961a39-f627-4d8e-93ba-9ab1fd2638a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Other">
+      <UniqueIdentifier>{0da8ca6a-40f4-4da9-87a6-ff6fb51c76d9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UniverstySystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="clsStudent.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowStudentsListscreen.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsMarksandGrades.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowStudentInfoscreen.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowStudentmainscreen.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowFindStudentscreen.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowMarksandGradesscreen.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowAddNewStudentscreen.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsDeleteStudentscreen.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowDeleteDoctorscreen.h">
+      <Filter>Header Files\Doctor</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowDoctorInfoscreen.h">
+      <Filter>Header Files\Doctor</Filter>
+    </ClInclude>
+    <ClInclude Include="clsDoctor.h">
+      <Filter>Header Files\Doctor</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowDoctorMainscreen.h">
+      <Filter>Header Files\Doctor</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowDoctorsListscreen.h">
+      <Filter>Header Files\Doctor</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowFindDoctorscreen.h">
+      <Filter>Header Files\Doctor</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowUpdateInfoScreen.h">
+      <Filter>Header Files\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowManagerMainscreen.h">
+      <Filter>Header Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowManagerInfoscreen.h">
+      <Filter>Header Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="clsManager.h">
+      <Filter>Header Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="clsLogin.h">
+      <Filter>Header Files\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowLoginscreen.h">
+      <Filter>Header Files\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="clsShowLoginsListscreen.h">
+      <Filter>Header Files\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="clsdate.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="clsInputValidate.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="clsperiod.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="clsPerson.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="clsScreen.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="clsString.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

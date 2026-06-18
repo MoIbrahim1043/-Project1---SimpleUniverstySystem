@@ -61,7 +61,7 @@ public:
 		while (clsStudent::isStudentExist(id))
 		{
 			cout << "\nExist, enter another : ";
-			string id = clsInputValidate::readstring();
+			id = clsInputValidate::readstring();
 		}
 
 		clsStudent Student = clsStudent::Find(id);

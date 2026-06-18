@@ -17,6 +17,7 @@ private:
 		cout << "\t| " << setw(10) << left << "ID";
 		cout << "| " << setw(25) << left << "Name";
 		cout << "| " << setw(14) << left << "Phone";
+		cout << "| " << setw(9) << left << "Phase";
 		cout << "| " << setw(10) << left << "Average";
 		cout << "| " << "Grade\n";
 		cout << "\t_________________________________________________________________________________________________________\n";
@@ -27,6 +28,7 @@ private:
 		cout << "\t| " << setw(10) << left << Student.getID();
 		cout << "| " << setw(25) << left << Student.fullname();
 		cout << "| " << setw(14) << left << Student.getphone();
+		cout << "| " << setw(9) << left << Student.getPhase();
 		cout << "| " << setw(10) << left << MarksandGrades.getAverage();
 		cout << "| " << MarksandGrades.getGrade();
 	}

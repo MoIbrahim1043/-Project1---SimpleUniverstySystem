@@ -24,9 +24,6 @@ private:
 		cout << "\nEnter phone number : ";
 		Student.setphone(clsInputValidate::readstring());
 
-		cout << "\nEnter password : ";
-		Student.setPassword(clsInputValidate::readstring());
-
 		cout << "\nEnter phase : ";
 		Student.setPhase(clsInputValidate::ReadNumberBetween(1,4,"Wrong, please enter a number between 1 to 4 : "));
 	}
@@ -37,11 +34,21 @@ public:
 	{
 		clsScreen::_Drawscreenheader("Update Student info");
 
-		_ReadStudentInfo(CurrentStudent);
+		cout << "\nEnter student ID : ";
+		string ID = clsInputValidate::readstring();
 
-		if (CurrentStudent.UpdateInfo())
+		while (!clsStudent::isStudentExist(ID))
 		{
-			cout << "\nStudent info has updated succesfully :-)\n";
+			cout << "\nNot exist, Enter another : ";
+			string ID = clsInputValidate::readstring();
+		}
+
+		clsStudent Student = clsStudent::Find(ID);
+		_ReadStudentInfo(Student);
+
+		if (Student.UpdateInfo())
+		{
+			cout << "\nStudent updated succesfully :-)\n";
 		}
 	}
 };

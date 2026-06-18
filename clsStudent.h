@@ -225,7 +225,7 @@ public:
 	static bool isStudentExist(string ID)
 	{
 		clsStudent Student = clsStudent::Find(ID);
-		return !Student.isEmpty();
+		return (!Student.isEmpty()) ? true : false;
 	}
 
 	void Addnew()

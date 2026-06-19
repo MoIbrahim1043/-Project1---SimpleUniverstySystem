@@ -22,8 +22,8 @@ private:
 
 	static void _PrintoneDoctor(clsDoctor& Doctor)
 	{
-		cout << "\t| Dr." << setw(12) << left << Doctor.getUsername();
-		cout << "| " << setw(25) << left << Doctor.fullname();
+		cout << "\t| " << setw(12) << left << Doctor.getUsername();
+		cout << "| Dr." << setw(22) << left << Doctor.fullname();
 		cout << "| " << setw(15) << left << Doctor.getphone();
 		cout << "| " << Doctor.getSalary();
 	}

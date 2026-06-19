@@ -11,68 +11,21 @@
 #include "Global.h"
 #include "clsShowStudentmainscreen.h"
 #include "clsShowDoctorMainscreen.h"
+#include "clsShowManagerMainscreen.h"
 using namespace std;
 
 class clsLogin
 {
 private:
 
-	struct stLoginData;
-
-	static stLoginData _ConvertDataLinetoStructure(string line, string parameter = "#//#")
-	{
-		vector <string> vTokens = clsString::splitstring(line, parameter);
-
-		stLoginData Object;
-		Object.DateandTime = vTokens.at(0);
-		Object.Name = vTokens.at(1);
-		Object.ID = vTokens.at(2);
-		Object.Phone = vTokens.at(3);
-
-		return Object;
-	}
-
-	static vector <stLoginData> _LoadDataFromFiletoVector()
-	{
-		fstream file;
-		file.open("Logins.txt", ios::in);
-
-		if (file.is_open())
-		{
-			string line;
-			vector <stLoginData> vLogins;
-
-			while (getline(file, line))
-			{
-				stLoginData Object = _ConvertDataLinetoStructure(line);
-				vLogins.push_back(Object);
-			}
-
-			file.close();
-			return vLogins;
-		}
-	}
-
-public:
-
-	struct stLoginData
-	{
-		string DateandTime;
-		string Name;
-		string ID;
-		string Phone;
-	};
-
-	static vector <stLoginData> GetLogins()
-	{
-		return _LoadDataFromFiletoVector();
-	}
-
 	static void PauseFunc()
 	{
 		cout << "\nPress any key to go to login page...\n";
 		system("pause>0");
 	}
+
+public:
+
 
 	static void StudentLogin()
 	{
@@ -120,6 +73,30 @@ public:
 		{
 			CurrentDoctor.AddtoLoginlist();
 			clsShowDoctorMainscreen::ShowDoctorMainscreen();
+		}
+	}
+
+	static void ManagerLogin()
+	{
+		cout << "\nEnter Username : ";
+		string Username = clsInputValidate::readstring();
+
+		cout << "\nEnter Password : ";
+		string Password = clsInputValidate::readstring();
+
+		CurrentManager = clsManager::Find(Username, Password);
+
+		if (CurrentManager.isEmpty())
+		{
+			LoginOption = 0;
+			cout << "\nInvalid Username/Password\n";
+			clsLogin::PauseFunc();
+		}
+
+		else
+		{
+			CurrentManager.AddtoLoginlist();
+			clsShowManagerMainscreen::ShowManagerMainscreen();
 		}
 	}
 };

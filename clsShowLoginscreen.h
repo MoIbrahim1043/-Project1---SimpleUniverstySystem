@@ -5,36 +5,11 @@
 #include "clsStudent.h"
 #include "clsDoctor.h"
 #include "clsManager.h"
-#include "clsShowManagerMainscreen.h"
 using namespace std;
 
 class clsShowLoginscreen : protected clsScreen
 {
 private:
-
-	static void ManagerLogin()
-	{
-		cout << "\nEnter Username : ";
-		string Username = clsInputValidate::readstring();
-
-		cout << "\nEnter Password : ";
-		string Password = clsInputValidate::readstring();
-
-		CurrentManager = clsManager::Find(Username, Password);
-
-		if (CurrentManager.isEmpty())
-		{
-			LoginOption = 0;
-			cout << "\nInvalid Username/Password\n";
-			clsLogin::PauseFunc();
-		}
-
-		else
-		{
-			CurrentManager.AddtoLoginlist();
-			clsShowManagerMainscreen::ShowManagerMainscreen();
-		}
-	}
 
 	enum enLoginOption { Student = 1 , Doctor = 2 , Manager = 3 };
 
@@ -64,7 +39,7 @@ private:
 		}
 		case enLoginOption::Manager:
 		{
-			ManagerLogin();
+			clsLogin::ManagerLogin();
 			CurrentManager = clsManager::Find("");
 			break;
 		}
@@ -83,5 +58,4 @@ public:
 		_PerformLoginOption(enLoginOption(_Readmainmenuoption()));
 		LoginOption = 0;
 	}
-	
 };
